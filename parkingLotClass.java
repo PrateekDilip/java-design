@@ -37,7 +37,6 @@ class parkingSpace {
     parkingType type;
     Car car;
     parkingSpace (int num_floors, int parkingspot) {
-//        System.out.println("call constructor\n");
         owner = new Owner();
         car = new Car();
         parkingNum = parkingspot;
@@ -55,26 +54,15 @@ class parkingSpace {
 class parkingLot {
     parkingSpace[][] parkingSlot = new parkingSpace[2][4];
     parkingLot(int num_space, int floors) {
-    //    parkingSpace[][] parkingSlot = new parkingSpace[floors][num_space]; 
         for (int i = 0; i < floors; i++) {
             for (int j = 0; j < num_space; j++) {
                 parkingSlot[i][j] = new parkingSpace(i,j); 
-        //        System.out.println(parkingSlot[i][j].isOccupied);
             }
-//            System.out.println();
-        }       
-        for (int i = 0; i < floors; i++) {
-            for (int j = 0; j < num_space; j++) {
-          //      parkingSlot[i][j] = new parkingSpace(i,j); 
-//                System.out.println(parkingSlot[i][j].isOccupied);
-            }
-            System.out.println();
         }       
     }
     boolean searchSpot(Car car) {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 4; j++) {
- //               System.out.println(parkingSlot[i][j].isOccupied);
                 if (!(parkingSlot[i][j].isOccupied)) {
                     parkingSlot[i][j].isOccupied = true;
                     parkingSlot[i][j].car.make = car.make;
